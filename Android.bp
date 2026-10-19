@@ -252,6 +252,18 @@ cc_prebuilt_binary {
     },
 }
 
+cc_prebuilt_binary {
+    name: "blkid",
+    host_supported: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        host: {
+            srcs: ["host/bin/blkid"],
+        },
+    },
+}
+
 cc_prebuilt_library {
     name: "libext2fs",
     host_supported: true,

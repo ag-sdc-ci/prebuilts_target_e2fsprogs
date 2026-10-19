@@ -1,0 +1,19 @@
+{
+	"provideLibs": [	
+		    "libdummy_ext_e2fsprogs-x86_64-v2.so",
+		    "libdummy_ext_e2fsprogs.so",
+		    "libdummy_headers_ext_e2fsprogs-x86_64-v2.so",
+		    "libdummy_headers_ext_e2fsprogs.so",
+		    "libext2_blkid-x86_64-v2.so",
+		    "libext2_blkid.so",
+		    "libext2_com_err-x86_64-v2.so",
+		    "libext2_com_err.so",
+		    "libext2_e2p-x86_64-v2.so",
+		    "libext2_e2p.so",
+		    "libext2_uuid-x86_64-v2.so",
+		    "libext2_uuid.so",
+		    "libext2fs-x86_64-v2.so",
+		    "libext2fs.so"
+	],
+	"visible": true
+}

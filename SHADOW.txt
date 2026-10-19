@@ -1,0 +1,7 @@
+shadow prebuilt repo: e2fsprogs (target)
+  upstream: external/e2fsprogs
+  api-level: 34 (branch 34-20261016)
+  blobs: org.blisslabs.ag.ext.e2fsprogs.apex
+  dev-src: extracted extractive dual-slice payload (target/, host/, include/) + root Android.bp
+  modules: libext2fs, libext2_com_err, libext2_e2p, libext2_ss, libext2_uuid, libext2_blkid, libext2_quota, libext2_misc, libext2_support, libext2-headers, mke2fs, tune2fs, debugfs, chattr-e2fsprogs, lsattr-e2fsprogs, e2fsdroid, ext2simg, e2fsck, resize2fs, badblocks, filefrag, e2freefrag, e2image
+  date: 2026-10-16

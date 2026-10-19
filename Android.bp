@@ -1,0 +1,389 @@
+// Auto-generated prebuilt Blueprint for external/e2fsprogs
+// Extracted from Extractive APEX package: org.blisslabs.ag.ext.e2fsprogs
+
+package {
+    default_applicable_licenses: ["external_e2fsprogs_license"],
+}
+
+license {
+    name: "external_e2fsprogs_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-GPL",
+        "SPDX-license-identifier-GPL-2.0",
+        "SPDX-license-identifier-LGPL",
+        "SPDX-license-identifier-LGPL-2.0",
+        "SPDX-license-identifier-LGPL-2.1",
+        "SPDX-license-identifier-LGPL-3.0",
+        "SPDX-license-identifier-MIT",
+        "legacy_notice",
+        "legacy_unencumbered",
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+cc_defaults {
+    name: "e2fsprogs-defaults",
+    host_supported: true,
+}
+
+cc_library_headers {
+    name: "libext2-headers",
+    host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
+    recovery_available: true,
+    export_include_dirs: ["include"],
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.virt",
+    ],
+    prefer: true,
+}
+
+cc_prebuilt_binary {
+    name: "mke2fs",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        android: {
+            srcs: ["target/bin/mke2fs"],
+        },
+        host: {
+            srcs: ["host/bin/mke2fs"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "tune2fs",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        android: {
+            srcs: ["target/bin/tune2fs"],
+        },
+        host: {
+            srcs: ["host/bin/tune2fs"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "debugfs",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        android: {
+            srcs: ["target/bin/debugfs"],
+        },
+        host: {
+            srcs: ["host/bin/debugfs"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "chattr-e2fsprogs",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        android: {
+            srcs: ["target/bin/chattr-e2fsprogs"],
+        },
+        host: {
+            srcs: ["host/bin/chattr"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "lsattr-e2fsprogs",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        android: {
+            srcs: ["target/bin/lsattr-e2fsprogs"],
+        },
+        host: {
+            srcs: ["host/bin/lsattr"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "e2fsdroid",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        android: {
+            srcs: ["target/bin/e2fsdroid"],
+        },
+        host: {
+            srcs: ["target/bin/e2fsdroid"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "ext2simg",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        android: {
+            srcs: ["target/bin/ext2simg"],
+        },
+        host: {
+            srcs: ["target/bin/ext2simg"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "e2fsck",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        host: {
+            srcs: ["host/bin/e2fsck"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "resize2fs",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        host: {
+            srcs: ["host/bin/resize2fs"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "badblocks",
+    host_supported: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        host: {
+            srcs: ["host/bin/badblocks"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "filefrag",
+    host_supported: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        host: {
+            srcs: ["host/bin/filefrag"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "e2freefrag",
+    host_supported: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        host: {
+            srcs: ["host/bin/e2freefrag"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "e2image",
+    host_supported: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        host: {
+            srcs: ["host/bin/e2image"],
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2fs",
+    host_supported: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2fs.so"] },
+            static: { srcs: ["target/lib/libext2fs.a"] },
+        },
+        host: {
+            shared: { srcs: ["host/lib/libext2fs.so"] },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2_com_err",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2_com_err.so"] },
+            static: { srcs: ["target/lib/libext2_com_err.a"] },
+        },
+        host: {
+            shared: { srcs: ["host/lib/libcom_err.so"] },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2_e2p",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2_e2p.so"] },
+            static: { srcs: ["target/lib/libext2_e2p.a"] },
+        },
+        host: {
+            shared: { srcs: ["host/lib/libe2p.so"] },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2_ss",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2_ss.so"] },
+            static: { srcs: ["target/lib/libext2_ss.a"] },
+        },
+        host: {
+            shared: { srcs: ["host/lib/libss.so"] },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2_uuid",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2_uuid.so"] },
+            static: { srcs: ["target/lib/libext2_uuid.a"] },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2_blkid",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2_blkid.so"] },
+            static: { srcs: ["target/lib/libext2_blkid.a"] },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2_quota",
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2_quota.so"] },
+            static: { srcs: ["target/lib/libext2_quota.a"] },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2_misc",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2_misc.so"] },
+            static: { srcs: ["target/lib/libext2_misc.a"] },
+        },
+    },
+}
+
+cc_prebuilt_library {
+    name: "libext2_support",
+    recovery_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    header_libs: ["libext2-headers"],
+    prefer: true,
+    target: {
+        android: {
+            shared: { srcs: ["target/lib/libext2_support.so"] },
+            static: { srcs: ["target/lib/libext2_support.a"] },
+        },
+    },
+}

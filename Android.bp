@@ -43,7 +43,6 @@ cc_library_headers {
         "//apex_available:platform",
         "com.android.virt",
     ],
-    prefer: true,
 }
 
 cc_prebuilt_binary {
@@ -92,6 +91,27 @@ cc_prebuilt_binary {
             srcs: ["host/bin/debugfs"],
         },
     },
+}
+
+cc_prebuilt_binary {
+    name: "debugfs_static",
+    host_supported: true,
+    recovery_available: true,
+    check_elf_files: false,
+    prefer: true,
+    target: {
+        android: {
+            srcs: ["target/bin/debugfs"],
+        },
+        host: {
+            srcs: ["host/bin/debugfs"],
+        },
+    },
+}
+
+sh_binary_host {
+    name: "blkid",
+    src: "host/bin/blkid",
 }
 
 cc_prebuilt_binary {
@@ -235,6 +255,8 @@ cc_prebuilt_binary {
 cc_prebuilt_library {
     name: "libext2fs",
     host_supported: true,
+    vendor_available: true,
+    product_available: true,
     ramdisk_available: true,
     vendor_ramdisk_available: true,
     recovery_available: true,
@@ -256,6 +278,10 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "libext2_com_err",
     host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -275,6 +301,10 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "libext2_e2p",
     host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -294,6 +324,10 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "libext2_ss",
     host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -313,6 +347,10 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "libext2_uuid",
     host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -329,6 +367,10 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "libext2_blkid",
     host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -344,6 +386,10 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "libext2_quota",
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -360,6 +406,10 @@ cc_prebuilt_library {
 cc_prebuilt_library {
     name: "libext2_misc",
     host_supported: true,
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -375,6 +425,10 @@ cc_prebuilt_library {
 
 cc_prebuilt_library {
     name: "libext2_support",
+    vendor_available: true,
+    product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     check_elf_files: false,
     export_include_dirs: ["include"],
@@ -387,3 +441,20 @@ cc_prebuilt_library {
         },
     },
 }
+
+cc_library_static {
+    name: "libtune2fs",
+    recovery_available: true,
+    vendor_available: true,
+    header_libs: ["libext2-headers"],
+    static_libs: [
+        "libext2_blkid",
+        "libext2_com_err",
+        "libext2_quota",
+        "libext2_uuid",
+        "libext2_e2p",
+        "libext2fs",
+    ],
+}
+
+
